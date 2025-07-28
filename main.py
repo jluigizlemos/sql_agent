@@ -38,7 +38,11 @@ def main():
     # Inicializa o modelo de linguagem (LLM)
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, openai_api_key=api_key)
 
-    # Cria o agente SQL
+    # Configuração para ocultar a cadeia de pensamento
+    import logging
+    logging.getLogger('langchain').setLevel(logging.ERROR)
+    
+    # Cria o agente SQL com verbose=False
     agent_executor = create_sql_agent(llm, db=db, agent_type="openai-tools", verbose=False)
 
     print("Agente SQL pronto! Faça suas perguntas sobre as vendas de bicicletas.")
