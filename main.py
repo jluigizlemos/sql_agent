@@ -36,7 +36,7 @@ def main():
         return
 
     # Inicializa o modelo de linguagem (LLM)
-    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, openai_api_key=api_key)
+    llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0, openai_api_key=api_key)
 
     # Configuração para ocultar a cadeia de pensamento
     import logging
